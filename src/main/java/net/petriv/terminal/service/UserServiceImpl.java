@@ -3,9 +3,10 @@ package net.petriv.terminal.service;
 import net.petriv.terminal.dao.UserDao;
 import net.petriv.terminal.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * Implementation of {@link UserService}
@@ -17,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Autowired(required = false)
     private UserDao userDao;
 
     @Override
@@ -31,5 +32,20 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User findById(Long id) {
         return userDao.findOne(id);
+    }
+
+    public List<User> findAll() {
+        return userDao.findAll();
+    }
+
+    @Override
+    public void update(User user) {
+      userDao.save(user);
+
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        userDao.delete(id);
     }
 }

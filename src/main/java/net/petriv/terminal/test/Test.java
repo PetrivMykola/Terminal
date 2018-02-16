@@ -9,10 +9,7 @@ public class Test {
 
         UserServiceImpl userService = new UserServiceImpl();
 
-        User user = new User();
-        user.setUsername("Mykola");
 
-        userService.save(user);
 
 
 

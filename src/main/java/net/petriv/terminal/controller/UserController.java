@@ -81,13 +81,4 @@ public class UserController {
         return "paymentsForUser";
     }
 
-
-//    public ModelAndView editBook(@PathVariable("id") Long id){
-//        User user = userService.findById(id);
-//        userService.update(user);
-//        User user2 = userService.findById(id);
-//        ModelAndView model = new ModelAndView("userForm");
-//        model.addObject("user", user2);
-//        return model;
-//    }
 }
